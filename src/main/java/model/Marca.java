@@ -13,7 +13,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "tb_entradasaida")
+@Table(name = "tb_marca")
 public enum Marca {
     CHEVROLET, FIAT, 
     HONDA, RENAULT,
