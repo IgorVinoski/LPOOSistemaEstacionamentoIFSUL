@@ -4,13 +4,23 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author igor
  */
-public class Pessoa {
+@Entity
+@Table(name = "tb_pessoa")
+public class Pessoa implements Serializable {
+        @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Id
     private int id;
     private String name;
     private String fone;
