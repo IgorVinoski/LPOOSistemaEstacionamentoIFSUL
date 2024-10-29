@@ -40,7 +40,6 @@ public class TestePersistencia {
         m.setDescricao("CrossFox");
         
         
-        m.setId(1);
         try{
             jpa.persist(m);
 
