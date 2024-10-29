@@ -4,11 +4,19 @@
  */
 package model;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  *
  * @author igor
  */
-public class VeiculoOficial extends Veiculo {
+
+
+@Entity
+@Table(name = "tb_veiculooficial")
+public class VeiculoOficial extends Veiculo implements Serializable {
     private String renavam;
     private String chassi;
     

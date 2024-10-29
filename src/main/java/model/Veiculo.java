@@ -5,11 +5,16 @@
 package model;
 
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  *
  * @author igor
  */
+
+@Entity
+@Table(name = "tb_veiculo")
 public class Veiculo {
     private String placa;
     private String cor;

@@ -4,10 +4,17 @@
  */
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  *
  * @author igor
  */
+
+
+@Entity
+@Table(name = "tb_veiculopessoa")
 public enum VeiculoPessoa {
     Servidor, Aluno, Tercerizado, Visitante
 }
