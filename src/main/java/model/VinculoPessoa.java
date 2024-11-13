@@ -4,16 +4,10 @@
  */
 package model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
 /**
  *
  * @author igor
  */
-
-@Entity
-@Table(name = "tb_vinculopessoa")
 public enum VinculoPessoa {
-    Servidor, Aluno, Tercerizado, Visitante
+    SERVIDOR, ALUNO, TERCEIRIZADO, VISITANTE;
 }

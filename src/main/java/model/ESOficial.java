@@ -4,13 +4,30 @@
  */
 package model;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
 /**
  *
  * @author igor
  */
-public class ESOficial {
+@Entity
+@DiscriminatorValue("veiculo_oficial")
+public class ESOficial extends EntradaSaida{
+    
+    
     private int kmRegistrado;
+    
+    @OneToOne
+    @JoinColumn(name = "es_oficial_motorista")
     private Pessoa motorista;
+
+    public ESOficial(TipoMovimentacao tipo, Veiculo veiculo, Pessoa motorista) {
+        super(tipo, veiculo);
+        this.motorista = motorista;
+    }
 
     public int getKmRegistrado() {
         return kmRegistrado;
@@ -27,5 +44,6 @@ public class ESOficial {
     public void setMotorista(Pessoa motorista) {
         this.motorista = motorista;
     }
+    
     
 }

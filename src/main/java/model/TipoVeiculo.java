@@ -4,16 +4,11 @@
  */
 package model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
 /**
  *
  * @author igor
  */
-
-@Entity
-@Table(name = "tb_tipoveiculo")
 public enum TipoVeiculo {
-    CARRO, MOTOCICLETA
+    CARRO, MOTOCICLETA;
+    
 }

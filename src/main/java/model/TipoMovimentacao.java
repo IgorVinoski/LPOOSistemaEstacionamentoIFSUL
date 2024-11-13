@@ -4,16 +4,10 @@
  */
 package model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
 /**
  *
  * @author igor
  */
-
-@Entity
-@Table(name = "tb_tipo")
-public enum Tipo {
-    Entrada, Saida
+public enum TipoMovimentacao {
+    ENTRADA, SAIDA;
 }

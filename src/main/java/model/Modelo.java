@@ -7,9 +7,13 @@ package model;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -22,18 +26,12 @@ public class Modelo implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Id
     private int id;
-    @Column(name="description", length= 100, nullable = false)
+    
+    @Column(name = "descr", length = 100, nullable = false)
     private String descricao;
     
+    @Enumerated(EnumType.STRING)
     private Marca marca;
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
 
     public int getId() {
         return id;
@@ -43,6 +41,14 @@ public class Modelo implements Serializable {
         this.id = id;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     public Marca getMarca() {
         return marca;
     }
@@ -50,4 +56,6 @@ public class Modelo implements Serializable {
     public void setMarca(Marca marca) {
         this.marca = marca;
     }
+    
+    
 }

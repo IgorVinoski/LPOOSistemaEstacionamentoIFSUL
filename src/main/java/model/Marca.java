@@ -4,19 +4,10 @@
  */
 package model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
 /**
  *
  * @author igor
  */
-
-@Entity
-@Table(name = "tb_marca")
 public enum Marca {
-    CHEVROLET, FIAT, 
-    HONDA, RENAULT,
-    HYUNDAI, YAMAHA,
-    FROD
+    CHEVROLET, FIAT, HONDA, FORD, RENAULT, HYUNDAI, YAMAHA;
 }
