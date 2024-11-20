@@ -66,6 +66,9 @@ public class PersistenciaJPA implements InterfaceDB {
         entity = getEntityManager();
         try {
             entity.getTransaction().begin();
+            if(!entity.contains(o)){
+                o = entity.merge(o);
+            }
             entity.remove(o);
             entity.getTransaction().commit();
         } catch (Exception e) {

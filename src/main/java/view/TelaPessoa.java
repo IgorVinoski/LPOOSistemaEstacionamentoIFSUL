@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import model.Pessoa;
@@ -149,6 +150,11 @@ public class TelaPessoa extends javax.swing.JFrame {
         btnEditarPessoa.setText("Editar");
 
         btnRemoverPessoa.setText("Remover");
+        btnRemoverPessoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverPessoaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout areaBotoesLayout = new javax.swing.GroupLayout(areaBotoes);
         areaBotoes.setLayout(areaBotoesLayout);
@@ -221,6 +227,26 @@ public class TelaPessoa extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbVinculoPessoaActionPerformed
 
+    private void btnRemoverPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverPessoaActionPerformed
+                // TODO add your handling code here:
+       Pessoa pessoaSel = lstPessoas.getSelectedValue();
+       if(pessoaSel != null){
+           try{
+               jpa.conexaoAberta();
+               
+               int delOp = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja remover " + pessoaSel.getNome() + " ?");
+               
+               
+               if(delOp == JOptionPane.YES_OPTION){
+                jpa.remover(pessoaSel);
+                carregarPessoasCadastradas();
+               }
+               jpa.fecharConexao();
+           }catch (Exception e){
+               JOptionPane.showConfirmDialog(this, "Não foi possivel remover " + pessoaSel.getNome());
+       }
+    }//GEN-LAST:event_btnRemoverPessoaActionPerformed
+}
     /**
      * @param args the command line arguments
      */

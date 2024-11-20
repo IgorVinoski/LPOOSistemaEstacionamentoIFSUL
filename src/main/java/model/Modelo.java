@@ -57,5 +57,9 @@ public class Modelo implements Serializable {
         this.marca = marca;
     }
     
-    
+    @Override
+public String toString() {
+    return this.descricao + " - " + this.marca; // Exemplo: "Modelo X - Marca Y"
+}
+
 }
